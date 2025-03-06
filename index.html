@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry Liu | Product Design & Innovation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #6A5ACD;
+        }
+        html, body {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.7;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+            z-index: -1;
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .animated-gradient {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform-origin: center;
+        }
+        .project-card:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .typing-effect {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end);
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        .glowing-border {
+            border: 2px solid transparent;
+            animation: glowing 2s ease-in-out infinite alternate;
+        }
+        @keyframes glowing {
+            0% { border-color: rgba(74, 144, 226, 0.5); }
+            100% { border-color: rgba(106, 90, 205, 0.8); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col">
+        <!-- Video Background Header -->
+        <header class="relative h-screen flex items-center justify-center text-white">
+            <video autoplay loop muted class="video-background">
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="container mx-auto px-4 relative z-10 text-center">
+                <h1 class="text-5xl font-bold mb-4 typing-effect text-white">Jerry Liu</h1>
+                <p class="text-xl mb-6 opacity-80 text-white">
+                    Innovator | Product Designer | Tech Strategist
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="mailto:liuruijie2001@gmail.com" class="bg-white text-blue-600 px-6 py-3 rounded-full hover:bg-blue-100 transition">
+                        Contact Me
+                    </a>
+                    <a href="#projects" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-blue-600 transition">
+                        View Projects
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Image Section -->
+        <section class="container mx-auto py-16 px-4">
+            <div class="grid md:grid-cols-2 gap-8">
+                <img 
+                    src="image1.jpeg"
+                    alt="Jerry Liu Project Image 1" 
+                    class="w-full h-96 object-cover rounded-lg shadow-lg transform transition hover:scale-105"
+                />
+                <img 
+                    src="image2.jpeg" 
+                    alt="Jerry Liu Project Image 2" 
+                    class="w-full h-96 object-cover rounded-lg shadow-lg transform transition hover:scale-105"
+                />
+            </div>
+        </section>
+
+        <!-- Remaining Sections from Previous Design -->
+        <!-- About Section -->
+        <section class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">About Me</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    A dynamic product designer and information systems professional with a passion for transformative technology solutions. 
+                    I blend market insights, user-centered design, and strategic thinking to create innovative products that solve real-world challenges.
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg glowing-border">
+                <h3 class="text-2xl font-semibold mb-4">Core Competencies</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Product Strategy & Design
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Market Analysis & Research
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Technical Innovation
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="project-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">AI-Powered Food Companion</h3>
+                    <p class="text-gray-700 mb-4">
+                        Innovative platform leveraging AI to provide personalized recipe recommendations. 
+                        Developed a freemium model with strategic marketing approach targeting health-conscious consumers.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Product Design</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">AI Innovation</span>
+                    </div>
+                </div>
+                <div class="project-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-600">Eliminating Food Waste</h3>
+                    <p class="text-gray-700 mb-4">
+                        Pioneered market entry strategy for upcycled food in China. Conducted comprehensive research 
+                        and developed a strategic plan promoting sustainability and circular economy principles.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Sustainability</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Market Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="container mx-auto px-4 py-16 bg-gray-100">
+            <h2 class="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="skill-tag bg-white shadow-md px-4 py-2 rounded-full hover:bg-blue-50 transition">
+                    Python
+                </div>
+                <div class="skill-tag bg-white shadow-md px-4 py-2 rounded-full hover:bg-blue-50 transition">
+                    R Programming
+                </div>
+                <div class="skill-tag bg-white shadow-md px-4 py-2 rounded-full hover:bg-blue-50 transition">
+                    SQL
+                </div>
+                <div class="skill-tag bg-white shadow-md px-4 py-2 rounded-full hover:bg-blue-50 transition">
+                    Qualtrics
+                </div>
+                <div class="skill-tag bg-white shadow-md px-4 py-2 rounded-full hover:bg-blue-50 transition">
+                    MS Project
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8 text-center">
+                <h2 class="text-3xl font-bold mb-4">Education</h2>
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold text-blue-600">University of Washington</h3>
+                    <p class="text-gray-700">Master of Science in Information Systems (STEM)</p>
+                    <p class="text-gray-500">Expected Graduation: June 2025</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-purple-600">University of Pittsburgh</h3>
+                    <p class="text-gray-700">Bachelor of Science in Business Administration</p>
+                    <p class="text-gray-500">Marketing & Business Information Systems</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-8 text-center">
+            <div class="container mx-auto px-4">
+                <p>© 2025 Jerry Liu. All Rights Reserved.</p>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <a href="mailto:liuruijie2001@gmail.com" class="hover:text-blue-400">Email</a>
+                    <a href="https://linkedin.com/in/ruijie-liu123456/" class="hover:text-blue-400">LinkedIn</a>
+                    <a href="#" class="hover:text-blue-400">Resume</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
